@@ -305,22 +305,25 @@ fn main() {
 
     if env::var("CARGO_FEATURE_DEBUG").is_ok() {
         info!("CARGO_FEATURE_DEBUG set");
-        cmd.arg("--enable-debug");
+        //cmd.arg("--enable-debug");
     }
+	cmd.arg("--disable-debug");
 
     if env::var("CARGO_FEATURE_PROFILING").is_ok() {
         info!("CARGO_FEATURE_PROFILING set");
-        cmd.arg("--enable-prof");
+        //cmd.arg("--enable-prof");
     }
+	cmd.arg("--disable-prof");
 
     if env::var("CARGO_FEATURE_STATS").is_ok() {
         info!("CARGO_FEATURE_STATS set");
-        cmd.arg("--enable-stats");
+        //cmd.arg("--enable-stats");
     }
+cmd.arg("--disable-stats");
 
     if env::var("CARGO_FEATURE_DISABLE_INITIAL_EXEC_TLS").is_ok() {
         info!("CARGO_FEATURE_DISABLE_INITIAL_EXEC_TLS set");
-        cmd.arg("--disable-initial-exec-tls");
+        //cmd.arg("--disable-initial-exec-tls");
     }
 
     cmd.arg(format!("--host={}", gnu_target(&target)));
